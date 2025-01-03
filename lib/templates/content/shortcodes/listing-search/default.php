@@ -113,7 +113,7 @@ $tabcounter      = 1;
 				}
 			}
 			?>
-			<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<form method="get" style="display: flex; align-items: center;" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<input type="hidden" name="action" value="epl_search" />
 				<?php
 					$epl_frontend_fields = epl_search_widget_fields_frontend( $post_type, $property_status );
@@ -154,3 +154,22 @@ $tabcounter      = 1;
 		</div>
 	<?php endif; ?>
 </div>
+
+<style>
+	.epl-search-forms-wrapper.epl-search-default{
+		max-width: 850px!important;
+	}
+	.epl-search-row{
+		margin: 10px!important;
+	}
+	.epl-search-form .epl-search-submit-row{
+		margin-top: 26px!important;
+	}
+	input.epl-search-btn{
+		padding: 8px;
+    	border-radius: 10px;
+	}
+	.epl-search-form .in-field{
+		border-radius: 10px!important;
+	}
+</style>
