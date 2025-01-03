@@ -141,4 +141,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	.epl-button{
 		margin: 5px;
 	}
+	div#secondary {
+		display: none;
+	}
 </style>
