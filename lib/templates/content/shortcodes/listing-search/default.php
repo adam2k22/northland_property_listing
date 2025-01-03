@@ -157,7 +157,7 @@ $tabcounter      = 1;
 
 <style>
 	.epl-search-forms-wrapper.epl-search-default{
-		max-width: 850px!important;
+		max-width: 100%!important;
 	}
 	.epl-search-row{
 		margin: 10px!important;
