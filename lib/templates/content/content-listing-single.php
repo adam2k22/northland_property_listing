@@ -20,22 +20,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="entry-header epl-header epl-clearfix">
 		<div class="title-meta-wrapper">
 			<div class="entry-col epl-property-details property-details">
-
-				<?php do_action( 'epl_property_before_title' ); ?>
 				<h1 class="entry-title">
-					<?php do_action( 'epl_property_title' ); ?>
+					<?php do_action( 'epl_property_heading' ); ?>
 				</h1>
-				<?php do_action( 'epl_property_after_title' ); ?>
-
+				<?php do_action( 'epl_property_address' ); ?>
 			</div>
 
 			<div class="entry-col property-pricing-details">
-
-				<?php do_action( 'epl_property_price_before' ); ?>
 				<div class="epl-property-meta property-meta pricing">
-					<?php do_action( 'epl_property_price' ); ?>
+					<h1 class="entry-title">
+						<?php do_action( 'epl_property_price' ); ?>
+					</h1>
 				</div>
-				<?php do_action( 'epl_property_price_after' ); ?>
 				<div class="epl-property-featured-icons property-feature-icons epl-clearfix">
 					<?php do_action( 'epl_property_icons' ); ?>
 				</div>
@@ -51,29 +47,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php do_action( 'epl_buttons_single_property' ); ?>
 
 		<div class="epl-tab-wrapper tab-wrapper">
-			<div class="epl-tab-section epl-section-property-details">
-				<h5 class="epl-tab-title">
-					<?php
-						$title_details = apply_filters( 'property_tab_title', __( 'Property Details', 'easy-property-listings' ) );
-						echo esc_html( $title_details );
-					?>
-				</h5>
-				<div class="epl-tab-content tab-content">
-					<div class="epl-property-address property-details">
-						<h3 class="epl-tab-address tab-address">
-							<?php do_action( 'epl_property_address' ); ?>
-						</h3>
-						<?php do_action( 'epl_property_land_category' ); ?>
-						<?php do_action( 'epl_property_price_content' ); ?>
-						<?php do_action( 'epl_property_commercial_category' ); ?>
-					</div>
-					<div class="epl-property-meta property-meta">
-						<?php do_action( 'epl_property_available_dates' ); // meant for rent only. ?>
-						<?php do_action( 'epl_property_inspection_times' ); ?>
-					</div>
-				</div>
-			</div>
-
 			<div class="epl-tab-section epl-section-description">
 				<h5 class="epl-tab-title">
 					<?php
@@ -82,19 +55,32 @@ if ( ! defined( 'ABSPATH' ) ) {
 					?>
 				</h5>
 				<div class="epl-tab-content tab-content">
-					<!-- heading -->
-					<h2 class="entry-title"><?php do_action( 'epl_property_heading' ); ?></h2>
-
-					<h3 class="secondary-heading"><?php do_action( 'epl_property_secondary_heading' ); ?></h3>
 					<?php
-						do_action( 'epl_property_content_before' );
-
 						do_action( 'epl_property_the_content' );
-
-						do_action( 'epl_property_content_after' ); // For Extension Support.
 					?>
 				</div>
 			</div>
+
+			<div class="epl-tab-section epl-section-property-details">
+				<h5 class="epl-tab-title">
+					<?php
+						$title_details = apply_filters( 'property_tab_title', __( 'Property Details', 'easy-property-listings' ) );
+						echo esc_html( $title_details );
+					?>
+				</h5>
+				<div class="epl-tab-content tab-content">
+					<div class="row">
+						<div class="col-6">
+							<span class="details-heading">Property Category:</span> <?php do_action( 'epl_property_secondary_heading' ); ?>
+						</div>
+						<div class="col-6">
+							<span class="details-heading">Property Price:</span> <?php do_action( 'epl_property_price_content' ); ?>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
 
 			<?php do_action( 'epl_property_tab_section_before' ); ?>
 			<div class="epl-tab-section epl-tab-section-features">
@@ -129,3 +115,30 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div>
 </div>
 <!-- end property -->
+
+<style>
+	.entry-title{
+		font-size:30px!important;
+		font-weight: 700!important;
+		line-height: 1.4!important;
+		color: #484848!important;
+	}
+	.details-heading {
+		font-size:18px!important;
+		font-weight: 700!important;
+		line-height: 1.4!important;
+		color: #484848!important;
+	}
+
+	.entry-image{
+		display: flex;
+    	justify-content: center;
+	}
+	.epl-button-wrapper.epl-clearfix {
+		display: flex;
+    	justify-content: center;
+	}
+	.epl-button{
+		margin: 5px;
+	}
+</style>

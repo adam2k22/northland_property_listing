@@ -136,13 +136,11 @@ add_action( 'epl_property_single', 'epl_property_single', 10, 1 );
  * @since      3.4.38 Added filter epl_property_featured_image_args to control all parameters & epl_no_property_featured_image action.
  * @since      3.4.39 Added missing arguments variable to epl_no_property_featured_image action.
  */
-function epl_property_featured_image( $image_size = 'index_thumbnail', $image_class = 'index-thumbnail', $link = true ) {
+function epl_property_featured_image($link = true ) {
 
 	$args = apply_filters(
 		'epl_property_featured_image_args',
 		array(
-			'image_size'  => $image_size,
-			'image_class' => $image_class,
 			'link'        => $link,
 		)
 	);
@@ -157,7 +155,7 @@ function epl_property_featured_image( $image_size = 'index_thumbnail', $image_cl
 				<?php if ( true === $args['link'] ) { ?>
 					<a href="<?php the_permalink(); ?>">
 				<?php } ?>
-						<?php the_post_thumbnail( $args['image_size'], array( 'class' => $args['image_class'] ) ); ?>
+						<?php the_post_thumbnail(); ?>
 				<?php if ( true === $args['link'] ) { ?>
 					</a>
 				<?php } ?>
