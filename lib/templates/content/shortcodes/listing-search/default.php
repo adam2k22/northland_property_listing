@@ -164,6 +164,7 @@ $tabcounter      = 1;
 	}
 	.epl-search-form .epl-search-submit-row{
 		margin-top: 26px!important;
+		width: 40%;
 	}
 	input.epl-search-btn{
 		padding: 8px;
@@ -171,5 +172,11 @@ $tabcounter      = 1;
 	}
 	.epl-search-form .in-field{
 		border-radius: 10px!important;
+	}
+	.epl-search-row.epl-search-row-select.epl-property_category.fm-block.epl-search-row-full{
+		Width:50%;
+	}
+	.epl-search-row.epl-search-row-select.epl-property_location.fm-block.epl-search-row-full{
+		Width:50%;
 	}
 </style>
