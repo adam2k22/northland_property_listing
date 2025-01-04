@@ -83,3 +83,21 @@ global $property;
 		<?php } ?>
 	</div>
 </div>
+
+<style>
+	.epl-listing-widget.property-widget-image{
+		border: 1px solid red;
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.epl-property-widget-image-wrapper{
+		display: flex;
+	}
+	.entry-content{
+		display: flex;
+    	flex-direction: column;
+    	align-items: center;
+	}
+</style>
