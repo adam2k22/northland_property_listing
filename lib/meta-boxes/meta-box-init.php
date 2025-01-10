@@ -1521,7 +1521,7 @@ function epl_get_meta_boxes() {
 
 						array(
 							'name'  => 'property_floorplan_2',
-							'label' => __( 'Floor plan 2', 'easy-property-listings' ),
+							'label' => __( 'Documents', 'easy-property-listings' ),
 							'type'  => 'file',
 							'width' => '2-3',
 						),
