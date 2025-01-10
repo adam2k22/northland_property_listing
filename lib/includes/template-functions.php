@@ -2272,6 +2272,12 @@ function epl_property_gallery() {
 		<div class="epl-gallery property-gallery">
 			<!-- Gallery -->
 			<div class="epl-gallery-entry entry-gallery epl-clearfix">
+				<h5 class="epl-tab-title">
+					<?php
+						$title_details = apply_filters( 'property_tab_title', __( 'Property Gallery', 'easy-property-listings' ) );
+						echo esc_html( $title_details );
+					?>
+				</h5>
 				<?php
 					$gallery_shortcode = '[gallery columns="' . $d_gallery_n . '" link="file"]';
 					$gallery           = apply_filters( 'epl_property_gallery_shortcode', $gallery_shortcode, $d_gallery_n );

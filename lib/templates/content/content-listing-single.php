@@ -83,9 +83,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 			
 
 			<?php do_action( 'epl_property_tab_section_before' ); ?>
-			<div class="epl-tab-section epl-tab-section-features">
-				<?php do_action( 'epl_property_features' ); ?>
-			</div>
 			<?php do_action( 'epl_property_tab_section_after' ); ?>
 
 			<?php do_action( 'epl_property_gallery' ); ?>
