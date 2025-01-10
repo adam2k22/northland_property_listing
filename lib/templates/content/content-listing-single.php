@@ -44,6 +44,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php do_action( 'epl_property_featured_image' ); ?>
 
+		
+
+
+
 		<?php do_action( 'epl_buttons_single_property' ); ?>
 
 		<div class="epl-tab-wrapper tab-wrapper">
@@ -78,14 +82,43 @@ if ( ! defined( 'ABSPATH' ) ) {
 						</div>
 					</div>
 				</div>
+				<h5 class="epl-tab-title">
+					<?php
+						$title_details = apply_filters( 'property_tab_title', __( 'Property Gallery', 'easy-property-listings' ) );
+						echo esc_html( $title_details );
+					?>
+				</h5>
+				<?php 
+					// Get the gallery field value
+					$gallery = get_field('property_gallery'); // Use the field name you created in ACF
+
+					if ($gallery) {
+						echo '<div class="property-gallery">';
+						$counter = 0; // Initialize a counter to track images
+						foreach ($gallery as $image) {
+							if ($counter % 4 === 0) {
+								// Start a new row after every 4 images
+								if ($counter !== 0) {
+									echo '</div>'; // Close the previous row
+								}
+								echo '<div class="gallery-row">'; // Start a new row
+							}
+							echo '<div class="gallery-item">';
+							echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '" />';
+							echo '</div>';
+							$counter++;
+						}
+						echo '</div>'; // Close the last row
+						echo '</div>'; // Close the gallery container
+					}
+				?>
 			</div>
+			
 
 			
 
 			<?php do_action( 'epl_property_tab_section_before' ); ?>
 			<?php do_action( 'epl_property_tab_section_after' ); ?>
-
-			<?php do_action( 'epl_property_gallery' ); ?>
 
 			<?php do_action( 'epl_property_map' ); ?>
 
@@ -141,4 +174,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 	div#secondary {
 		display: none;
 	}
+	.property-gallery {
+    display: flex;
+    flex-wrap: wrap; /* Allows rows to wrap automatically */
+    gap: 16px; /* Adds space between items */
+}
+
+.gallery-row {
+    display: flex;
+    flex-wrap: wrap; /* Ensures items in the row wrap if needed */
+    justify-content: space-between; /* Adjusts spacing between items */
+    margin-bottom: 16px; /* Adds space between rows */
+}
+
+.gallery-item {
+    flex: 1 1 calc(25% - 16px); /* Ensures 4 items per row with gap adjustment */
+    box-sizing: border-box; /* Includes padding and border in the width calculation */
+    max-width: calc(25% - 16px); /* Prevents items from exceeding the row width */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: shadow for better aesthetics */
+}
+
 </style>
