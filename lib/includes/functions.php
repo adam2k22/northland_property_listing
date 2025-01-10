@@ -707,6 +707,7 @@ function epl_listing_load_meta_property_category() {
 		'BlockOfUnits'        => __( 'Block Of Units', 'easy-property-listings' ),
 		'Terrace'             => __( 'Terrace', 'easy-property-listings' ),
 		'ServicedApartment'   => __( 'Serviced Apartment', 'easy-property-listings' ),
+		'Cottages'   => __( 'Cottages', 'easy-property-listings' ),
 		'Other'               => __( 'Other', 'easy-property-listings' ),
 	);
 	return apply_filters( 'epl_listing_meta_property_category', $defaults );
