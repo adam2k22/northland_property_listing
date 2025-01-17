@@ -23,6 +23,9 @@ global $property;
 			<?php if ( has_post_thumbnail() ) : ?>
 				<div class="property-box property-box-left property-featured-image-wrapper">
 					<?php do_action( 'epl_property_archive_featured_image' ); ?>
+					<div class="price-overlay">
+						<?php do_action( 'epl_property_price' ); ?>
+					</div>
 					<!-- Home Open -->
 					<?php do_action( 'epl_property_inspection_times' ); ?>
 				</div>
@@ -52,3 +55,28 @@ global $property;
 		<?php do_action( 'epl_property_after_content' ); ?>
 	</div>
 </div>
+
+<style>
+	.epl-property-blog .entry-title a{
+		font-weight: 900;
+		font-size: 20px;
+	}
+	.epl-property-blog .entry-title{
+		line-height: 1.7!important;
+	}
+	.epl-property-blog a{
+		font-size: 15px;
+		font-weight: 800;
+		color: #000;
+	}
+	span.page-price{
+		font-size: 20px;
+		font-weight: 900;
+		color: #000;
+	}
+	.price-overlay {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+</style>
