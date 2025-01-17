@@ -75,7 +75,7 @@ global $property;
 	}
 	.price-overlay {
 		position: absolute;
-		top: 10px;
+		top: 20px;
 		right: 10px;
 		background: #ffeeee7a;
 		padding: 7px;
