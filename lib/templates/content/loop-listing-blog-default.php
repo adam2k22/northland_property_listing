@@ -81,7 +81,9 @@ global $property;
 		padding: 7px;
 		border-radius: 5px;
 	}
-
+	.epl-property-blog .price{
+		margin-top: 10px;
+	}
 	.epl-property-blog .property-address{
 		line-height: 1.7!important;
 	}
