@@ -159,16 +159,16 @@ $tabcounter      = 1;
 	.epl-search-forms-wrapper.epl-search-default{
 		max-width: 100%!important;
 	}
-	.epl-search-row{
-		margin: 10px!important;
-	}
 	.epl-search-form .epl-search-submit-row{
-		margin-top: 26px!important;
+		margin-top: 30px!important;
 		width: 40%;
 	}
 	input.epl-search-btn{
 		padding: 8px;
     	border-radius: 10px;
+		background-color: #f8d082;
+		color: #000;
+		font-weight: 900;
 	}
 	.epl-search-form .in-field{
 		border-radius: 10px!important;
@@ -179,4 +179,31 @@ $tabcounter      = 1;
 	.epl-search-row.epl-search-row-select.epl-property_location.fm-block.epl-search-row-full{
 		Width:50%;
 	}
+	form {
+	display: flex;
+	flex-wrap: wrap; /* Allows wrapping of rows */
+	justify-content: center; /* Centers the content horizontally */
+	align-items: center; /* Centers the content vertically */
+	gap: 0.2rem; /* Adds space between elements */
+	}
+
+	.epl-search-row {
+	flex: 1 1 100%; /* Full width for each row by default */
+	}
+
+	.epl-search-row.epl-property_category,
+	.epl-search-row.epl-property_location {
+	flex: 1; /* Take equal space for category and location */
+	}
+
+	.epl-search-submit-row {
+	flex: 0 0 auto; /* Keep the button from stretching */
+	align-self: flex-start; /* Align the button to the top */
+	}
+
+	.epl-search-btn {
+	margin-left: auto; /* Pushes the button to the right */
+	display: block;
+	}
+
 </style>
