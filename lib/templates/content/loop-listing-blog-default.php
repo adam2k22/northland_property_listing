@@ -67,7 +67,6 @@ global $property;
 	.epl-property-blog a{
 		font-size: 15px;
 		font-weight: 800;
-		color: #000;
 	}
 	span.page-price{
 		font-size: 20px;
@@ -78,5 +77,12 @@ global $property;
 		position: absolute;
 		top: 10px;
 		right: 10px;
+		background: #ffeeee7a;
+		padding: 7px;
+		border-radius: 5px;
+	}
+
+	.epl-property-blog .property-address{
+		line-height: 1.7!important;
 	}
 </style>
