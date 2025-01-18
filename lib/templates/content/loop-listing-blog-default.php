@@ -63,6 +63,7 @@ global $property;
 	}
 	.epl-property-blog .entry-title{
 		line-height: 1.7!important;
+		height: 80px;
 	}
 	.epl-property-blog a{
 		font-size: 15px;
@@ -86,5 +87,11 @@ global $property;
 	}
 	.epl-property-blog .property-address{
 		line-height: 1.7!important;
+	}
+	.epl-property-blog .entry-content, .site-content .epl-property-blog .entry-content{
+		height: 60px;
+	}
+	.epl-property-blog .price{
+		height: 40px;
 	}
 </style>
