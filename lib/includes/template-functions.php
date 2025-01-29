@@ -3336,24 +3336,12 @@ add_action( 'epl_shortcode_results_message', 'epl_shortcode_results_message_call
  * @since 3.4.48 Container added to search not found.
  */
 function epl_property_search_not_found_callback() {
-
-	$title   = apply_filters( 'epl_property_search_not_found_title', __( 'Listing not Found', 'easy-property-listings' ) );
-	$message = apply_filters( 'epl_property_search_not_found_message', __( 'Listing not found, expand your search criteria and try again.', 'easy-property-listings' ) );
-
-	?>
-	<div class="epl-search-not-found">
-		<div class="epl-search-not-found-title entry-header clearfix">
-			<h3 class="entry-title"><?php echo wp_kses_post( $title ); ?></h3>
-		</div>
-
-		<div class="epl-search-not-found-message entry-content clearfix">
-			<p><?php echo wp_kses_post( $message ); ?></p>
-		</div>
-	</div>
-
-	<?php
+    // Redirect to the contact page if no listings are found
+    wp_redirect( 'https://northlandrealty.in/contact/' );
+    exit;
 }
 add_action( 'epl_property_search_not_found', 'epl_property_search_not_found_callback' );
+
 
 /**
  * Add Listing Status and Under Offer to Post Class

@@ -412,8 +412,8 @@ function epl_search_widget_fields_frontend( $post_type = '', $property_status = 
 			array(
 				'key'         => 'search_address',
 				'meta_key'    => 'property_address',
-				'label'       => __( 'Search by Address', 'easy-property-listings' ),
-				'placeholder' => __( 'Search Address', 'easy-property-listings' ),
+				'label'       => __( 'Search by Title', 'easy-property-listings' ),
+				'placeholder' => __( 'Search Title', 'easy-property-listings' ),
 				'type'        => 'text',
 				'class'       => 'epl-search-row-full',
 				'query'       => array( 'query' => 'post' ),
